@@ -1,12 +1,12 @@
 # Using an Android Table as the display for a Raspberry Pi (over local network)
 
-### [reference](http://www.penguintutor.com/linux/tightvnc)
+## [reference](http://www.penguintutor.com/linux/tightvnc)
 
 ```bash
 sudo apt-get install tightvncserver
 ```
 
-### create a systemd start / stop
+## create a systemd start / stop
 ```bash
 sudo nano /etc/systemd/system/tightvncserver.service
 ```
@@ -27,6 +27,7 @@ WantedBy=multi-user.target
 ```
 
 *to avoid the error 'tightvncserver[17385]: Password: Password too short' on start set a password using the following;*
+
 ```bash
 vncpasswd
 ```
@@ -39,10 +40,10 @@ sudo chmod 755 /etc/systemd/system/tightvncserver.service
 sudo systemctl start tightvncserver.service
 ```
 
-### Client (Nexus 7 here or - any android table)
+## Client (Nexus 7 here or - any android table)
 * Install [bvnc](https://play.google.com/store/apps/details?id=com.iiordanov.freebVNC&hl=en)
 
-#### Configuration
+### Configuration
 * Basic VNC
 * Set VNC connection settings to IP with Port 5901 (on server us ps aux | grep tightvnc to get port i.e. -rfbport 5901
 
